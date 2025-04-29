@@ -1,7 +1,7 @@
 <?php 
 /**
  * Arquivo inicial da aplicação
- * Aqui alguns dados foram mockados apenas para testes. 
+ * Aqui alguns dados foram mockados apenas para didática. 
  */
 
 include 'src/Contoller/UserController.php';

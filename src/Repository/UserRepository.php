@@ -7,7 +7,7 @@
 
 class UserRepository 
 {
-    public function save(UserDTO $userDTO){
+    public function save(UserDTO $userDTO): UserModel {
 
         $user = new UserModel();
         $user->nome = $userDTO->nome; 

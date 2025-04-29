@@ -22,8 +22,11 @@ class UserRequest
         $this->email = $dadosRequisicao['email']; 
     }
 
-    public function toDTO(): UserDTO {
-        return new UserDTO($this->nome, $this->email);
+    public function getNome() {
+        return $this->nome; 
+    }
+    public function getEmail() {
+        return $this->email;
     }
 
 

@@ -11,18 +11,16 @@ class UserController {
         $this->userService = new UserService;
     }
 
-    public function store(array $requestDados) {
+    public function store(array $requestDados): array {
         
         // Valida a requisição 
         $request = new UserRequest($requestDados); 
-        $userDTO = $request->toDTO();
-
-        // Chama a service onde terá a lógica negocial 
-        $user = $this->userService->createUser($userDTO);   
+        $userDTO = UserDTO::makeFromRequest($request);
 
         // Padroniza a resposta com um resouces
-        $retorno = new UserResource($user);
-        return $retorno->toArray();
+        // Resouces devolve o Retorno da service onde terá a lógica negocial 
+        return (new UserResource($this->userService->createUser($userDTO)))->toArray();
+        
     }
 
 }

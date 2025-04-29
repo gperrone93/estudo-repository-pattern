@@ -10,4 +10,12 @@ class UserDTO
         $this->nome = $nome; 
         $this->email = $email;
     }
+
+    public static function makeFromRequest(UserRequest $userRequest): self {
+
+        return new self(
+            $userRequest->getNome(),
+            $userRequest->getEmail()
+        );
+    }
 }

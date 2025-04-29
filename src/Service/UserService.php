@@ -12,7 +12,7 @@ class UserService {
         $this->userRepository = new UserRepository(); 
     }
 
-    public function createUser(UserDTO $userDto) {
+    public function createUser(UserDTO $userDto): UserModel {
         // Posso fazer a lógica negócial 
         // Depois chamar a repository para fazer seu papel 
         return $this->userRepository->save($userDto);
